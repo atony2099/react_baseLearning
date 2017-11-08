@@ -4,13 +4,22 @@
 [Webpack 中文指南](http://zhaoda.net/webpack-handbook/loader.html)
 
 
-#安装
+## 是什么
+Webpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。
+
+
+![](http://ohbzayk4i.bkt.clouddn.com/17-10-31/37750049.jpg)
+
+
+
+##安装
 
 npm install webpack --save-dev
 npm install webpack-dev-server --save-dev
 > Use webpack with a development server that provides live reloading. This should be used for development only.
 
-# about configure
+
+## about configure
 ```javascript
 module.exports = {
   entry:  __dirname + "/app/index.js",//已多次提及的唯一入口文件,相当于mian文件
@@ -21,7 +30,8 @@ module.exports = {
 }
 ```
 ##  loader
-> Loader 可以理解为是模块和资源的转换器，它本身是一个函数，接受源文件作为参数，返回转换的结果。这样，我们就可以通过 require 来加载任何类型的模块或文件，比如 CoffeeScript、 JSX、 LESS 或图片。
+> Webpack 本身只能处理原生的 JavaScript 模块，但是 loader 转换器可以将各种类型的资源转换成 JavaScript 模块。这样，任何资源都可以成为 Webpack 可以处理的模块
+
 
 ``` javascript
   module: {
@@ -51,7 +61,6 @@ Babel是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从
 > Babel是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从而在现有环境执行。
 
 
-
 ## plugins
 插件:
 
@@ -79,56 +88,5 @@ plugins: [
 
 ## Setting Up Babel-Loader
 ```javascript
- npm i babel-loa用der babel-preset-es2015 babel-preset-react -S
-```
-
- ## JSX 原理： jsx 就是js 对象
- 将所有的html 用js 表示
-
- ```
- import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-
-class Header extends Component {
-  render () {
-    return (
-      <div>
-        <h1 className='title'>React 小书</h1>
-      </div>
-    )
-  }
-}
-
-
-ReactDOM.render(
-  <Header />,
-  document.g
- ```
-  编译后转换为
-```javascript
-  import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-
-class Header extends Component {
-  render () {
-    return (
-     React.createElement(
-        "div",
-        null,
-        React.createElement(
-          "h1",
-          { className: 'title' },
-          "React 小书"
-        )
-      )
-    )
-  }
-}
-
-ReactDOM.render(
-  React.createElement(Header, null),
-  document.getElementById('root')
-);
+ npm i babel-loader babel-preset-es2015 babel-preset-react -S
 ```

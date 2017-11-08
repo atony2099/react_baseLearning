@@ -1,18 +1,3 @@
-
-# 常见命令
-
-# viewPort
-
-简单理解: 页面显示的窗口，
-
-
-
-[Nodejs package.json文件介绍](http://jingpin.jikexueyuan.com/article/34254.html)
-
-[package.json文件](http://javascript.ruanyifeng.com/nodejs/packagejson.html)
-
-
-
 ## React 的声明周期
 
 ### React Cyclelife

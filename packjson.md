@@ -6,7 +6,7 @@
 
 ## 怎么用
 
-> `npm install module-name -save` 
+> `npm install module-name -save`
 >
 > 安装模块，同时 自动把模块和版本号添加到dependencies部分是我们生产环境中需要的依赖。
 >
@@ -20,3 +20,5 @@
 
 [package.json文件](http://javascript.ruanyifeng.com/nodejs/packagejson.html)
 
+
+[package.json文件](http://javascript.ruanyifeng.com/nodejs/packagejson.html)
