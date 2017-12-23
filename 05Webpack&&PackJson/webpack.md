@@ -3,9 +3,16 @@
 
 [Webpack 中文指南](http://zhaoda.net/webpack-handbook/loader.html)
 
+[入门 Webpack，看这篇就够了](https://segmentfault.com/a/1190000006178770#articleHeader6)
+[webpcak - doc](https://webpack.js.org/concepts/)
+
+
 
 ## 是什么
-Webpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。
+模块： 一切皆是模块，，它把所有的文件都都当做模块处理，JavaScript代码，CSS和fonts以及图片等等通过合适的loader都可以被处理。
+
+**Webpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。**
+
 
 
 ![](http://ohbzayk4i.bkt.clouddn.com/17-10-31/37750049.jpg)
@@ -20,6 +27,17 @@ npm install webpack-dev-server --save-dev
 
 
 ## about configure
+- entry
+- outPut
+- loader
+- plugins
+
+
+
+### entry
+> entry
+
+
 ```javascript
 module.exports = {
   entry:  __dirname + "/app/index.js",//已多次提及的唯一入口文件,相当于mian文件
@@ -29,8 +47,9 @@ module.exports = {
   }
 }
 ```
-##  loader
-> Webpack 本身只能处理原生的 JavaScript 模块，但是 loader 转换器可以将各种类型的资源转换成 JavaScript 模块。这样，任何资源都可以成为 Webpack 可以处理的模块
+##  loader  转换器
+> Webpack 本身只能处理原生的 JavaScript 模块，
+loader 转换器可以将各种类型的资源转换成 JavaScript
 
 
 ``` javascript
@@ -47,11 +66,18 @@ module.exports = {
     ]
   }
 ```
+what's the menaning?
+
+> hey webpcak complier, when you get cross the js, use baber-loader transfom first
+
+
+
 参数配置
 - test：一个用以匹配loaders所处理文件的拓展名的正则表达式（必须）
 - loader：loader的名称（必须）
 - include/exclude:手动添加必须处理的文件（文件夹）或屏蔽不需要处理的文件（文件夹）（可选）；
 - query：为loaders提供额外的设置选项（可选）
+
 
 ### 相关loader
 #### babel
@@ -62,8 +88,7 @@ Babel是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从
 
 
 ## plugins
-插件:
-
+插件: 提供广泛的用途，作用于整个项目
 ```javascript
 plugins: [
     // html 模板插件
@@ -84,9 +109,4 @@ plugins: [
       __DEV__: JSON.stringify(JSON.parse((process.env.NODE_ENV == 'dev') || 'false'))
     })
 ],
-```
-
-## Setting Up Babel-Loader
-```javascript
- npm i babel-loader babel-preset-es2015 babel-preset-react -S
 ```
