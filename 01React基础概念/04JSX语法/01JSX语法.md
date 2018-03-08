@@ -3,7 +3,8 @@
 - state  setState是异步刷新的
 - props default props
 - jsx语法
--
+- tips
+
 
 ## state setState是异步刷新的
 ```
@@ -82,6 +83,30 @@ const element = {
 
 ### 渲染列表数据
 a. 对于用表达式套数组罗列到页面上的元素，都要为每个元素加上 key 属性，这个 key 必须是每个元素唯一的标识。(为了更高效的渲染)
+
+
+## tips
+
+###  Booleans, Null, and Undefined Are Ignored
+
+```
+<div />
+
+<div></div>
+
+<div>{false}</div>
+
+<div>{null}</div>
+
+<div>{undefined}</div>
+
+<div>{true}</div>
+
+
+```
+
+
+
 
 
 ## [模块化](#state)
