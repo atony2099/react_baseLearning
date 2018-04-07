@@ -1,7 +1,5 @@
 ## React 的声明周期
-
 ### React Cyclelife
-
 #### Mounting
 
 - [`constructor()`](https://facebook.github.io/react/docs/react-component.html#constructor)
